@@ -14,6 +14,18 @@ switch (dia){
     console.log("Martes")
     break;
 
+    case 3:
+    console.log("Miercoles")
+    break;
+
+    case 4:
+    console.log("Jueves")
+    break;
+
+    case 5:
+    console.log("Viernes")
+    break;
+
     default:
         console.log("Ingrese un dia valido")
 }
