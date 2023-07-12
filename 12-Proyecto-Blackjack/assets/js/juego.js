@@ -9,6 +9,14 @@ let deck = [];
 const tipos = ['C','D','H','S'];
 const especiales = ['A','J','Q','K'];
 
+let puntosJugador = 0,
+    puntosComputadora = 0;
+
+// referencia del html
+const btnPedir = document.querySelector('#btnPedir');
+
+
+
 const crearDeck = () =>{
     for(let i=2; i<=10; i++){
         for(let tipo of tipos){
@@ -38,9 +46,7 @@ const pedirCarta = () =>{
         throw 'No hay cartas en el deck';
     }
     const carta = deck.pop();
-
     return carta;
-
 } 
 
 // valor carta
@@ -50,16 +56,10 @@ const valorCarta = (carta) =>{
            (valor === 'A') ? 11 : 10
            : valor * 1;
 
-    // let puntos = 0;
-    // if(isNaN(valor)){
-    //     puntos = (valor === 'A') ? 11 : 10;
-    // }else{
-    //     puntos = valor * 1;
-    // }
-
-    // console.log(puntos);
 }
 
-const valor = valorCarta(pedirCarta());
-console.log({valor});
-
+// Eventos
+btnPedir.addEventListener('click', () =>{
+    carta = pedirCarta();
+    console.log(carta);
+});
